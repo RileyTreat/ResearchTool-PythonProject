@@ -11,6 +11,21 @@ def get_questions(artifact_id):
     questions = Question.query.filter_by(artifact_id=artifact_id).all()
     return jsonify([question.to_dict() for question in questions]), 200
 
+#GET all questions by the current logged in user
+@question_routes.route('/current', methods=['GET'])
+@login_required
+def get_user_questions():
+    """
+    Get all questions owned by the current logged-in user.
+    """
+    user_id = current_user.id
+    questions = Question.query.filter_by(user_id=user_id).all()
+
+    if not questions:
+        return jsonify({'message': 'No questions found for the current user'}), 404
+
+    return jsonify([question.to_dict() for question in questions]), 200
+
 # POST a new question
 @question_routes.route('/artifacts/<int:artifact_id>/questions', methods=['POST'])
 @login_required

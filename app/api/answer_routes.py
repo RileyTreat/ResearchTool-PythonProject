@@ -11,6 +11,21 @@ def get_answers(question_id):
     answers = Answer.query.filter_by(question_id=question_id).all()
     return jsonify([answer.to_dict() for answer in answers]), 200
 
+#GET all answers from the current logged in user
+@answer_routes.route('/current', methods=['GET'])
+@login_required
+def get_user_answers():
+    """
+    Get all answers owned by the current logged-in user.
+    """
+    user_id = current_user.id
+    answers = Answer.query.filter_by(user_id=user_id).all()
+
+    if not answers:
+        return jsonify({'message': 'No answers found for the current user'}), 404
+
+    return jsonify([answer.to_dict() for answer in answers]), 200
+
 # POST a new answer
 @answer_routes.route('/questions/<int:question_id>/answers', methods=['POST'])
 @login_required
