@@ -2,6 +2,7 @@ import { createBrowserRouter } from 'react-router-dom';
 import LoginFormPage from '../components/LoginFormPage';
 import SignupFormPage from '../components/SignupFormPage';
 import Layout from './Layout';
+import WelcomePage from '../components/WelcomePage';
 
 export const router = createBrowserRouter([
   {
@@ -9,7 +10,7 @@ export const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <h1>Welcome!</h1>,
+        element: <WelcomePage />,
       },
       {
         path: "login",
@@ -18,6 +19,34 @@ export const router = createBrowserRouter([
       {
         path: "signup",
         element: <SignupFormPage />,
+      },
+      {
+        path: '/home',
+        element: <h1>manage reviews OPTIONAL</h1>
+      },
+      {
+        path: '/search',
+        element: <h1>search</h1>
+      },
+      {
+        path: '/artifacts/:artifactId',
+        element: <h1>Artifact</h1>
+      },
+      {
+        path: '/artifacts/new',
+        element: <h1>Create an artifact</h1>
+      },
+      {
+        path: '/archiver/artifacts',
+        element: <h1>Archivers artifacts</h1>
+      },
+      {
+        path: '/archiver/questions',
+        element: <h1>Archivers questions</h1>
+      },
+      {
+        path: '/archiver/answers',
+        element: <h1>Archivers answers</h1>
       },
     ],
   },
