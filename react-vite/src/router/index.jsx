@@ -4,6 +4,7 @@ import SignupFormPage from '../components/SignupFormPage';
 import Layout from './Layout';
 import WelcomePage from '../components/WelcomePage';
 import HomePage from '../components/HomePage/HomePage';
+import ArtifactPage from '../components/ArtifactPage';
 
 export const router = createBrowserRouter([
   {
@@ -31,7 +32,7 @@ export const router = createBrowserRouter([
       },
       {
         path: '/artifacts/:artifactId',
-        element: <h1>Artifact</h1>
+        element: <ArtifactPage />
       },
       {
         path: '/artifacts/new',

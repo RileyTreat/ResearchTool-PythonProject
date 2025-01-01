@@ -26,7 +26,10 @@ export const thunkCreateQuestion = (artifactId, questionData) => async (dispatch
     });
     if (response.ok) {
         const newQuestion = await response.json();
+        console.log('New Question:', newQuestion);
         dispatch(addQuestion(newQuestion));
+    }  else {
+        console.error('Failed to create question:', await response.json());
     }
 };
 
@@ -60,7 +63,9 @@ export default function questionsReducer(state = initialState, action) {
         case SET_QUESTIONS:
             return action.questions;
         case ADD_QUESTION:
-            return [...state, action.question];
+            console.log('Questions before adding:', state);
+            console.log('Adding question:', action.question);
+            return [action.question, ...state];
         case UPDATE_QUESTION:
             return state.map((q) => (q.id === action.question.id ? action.question : q));
         case DELETE_QUESTION:

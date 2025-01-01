@@ -1,0 +1,100 @@
+.artifact-page {
+    padding: 20px;
+}
+
+.artifact-content {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    background-color: #e6e5ff; /* Light purple from inquire button */
+}
+
+.artifact-image {
+    max-width: 300px;
+    max-height: 300px;
+    object-fit: cover;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* No rounded edges */
+}
+
+.artifact-info {
+    flex: 1;
+}
+
+.inquiry-section textarea {
+    width: 100%;
+    height: 70px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    resize: none;
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #fffaf2; /* Soft cream background */
+}
+
+.inquiry-section button,
+.comment-button {
+    padding: 10px 15px;
+    border-radius: 5px;
+    background-color: #c2c1ff; /* Darker purple */
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.inquiry-section button:hover,
+.comment-button:hover {
+    background-color: #a19ef5; /* Slightly darker purple */
+}
+
+.questions-log {
+    margin-top: 20px;
+}
+
+.question-item {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 15px;
+    background-color: #fffaf2; /* Soft cream */
+}
+
+.answer-item {
+    margin-top: 10px;
+    border-left: 3px solid #e6e5ff; /* Soft purple border */
+    padding-left: 15px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color: #f9f5ff; /* Subtle purple background */
+}
+
+.edit-button {
+    padding: 5px 10px;
+    margin-right: 5px;
+    border-radius: 5px;
+    color: white;
+    border: none;
+    cursor: pointer;
+    background-color: #c2c1ff; /* Darker purple */
+}
+
+.edit-button:hover {
+    background-color: #a19ef5; /* Slightly darker purple */
+}
+
+.delete-button {
+    padding: 5px 10px;
+    margin-right: 5px;
+    border-radius: 5px;
+    color: white;
+    border: none;
+    cursor: pointer;
+    background-color: #ffad4b; /* Creamy orange */
+}
+
+.delete-button:hover {
+    background-color: #e6993d; /* Darker creamy orange */
+}
