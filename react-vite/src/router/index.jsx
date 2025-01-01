@@ -3,6 +3,7 @@ import LoginFormPage from '../components/LoginFormPage';
 import SignupFormPage from '../components/SignupFormPage';
 import Layout from './Layout';
 import WelcomePage from '../components/WelcomePage';
+import HomePage from '../components/HomePage/HomePage';
 
 export const router = createBrowserRouter([
   {
@@ -22,7 +23,7 @@ export const router = createBrowserRouter([
       },
       {
         path: '/home',
-        element: <h1>manage reviews OPTIONAL</h1>
+        element: <HomePage />
       },
       {
         path: '/search',

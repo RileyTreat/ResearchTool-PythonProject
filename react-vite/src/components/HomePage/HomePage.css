@@ -1,0 +1,56 @@
+.home-page {
+  padding: 20px;
+}
+
+.artifact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Restores grid layout */
+  gap: 20px;
+}
+
+.artifact-tile {
+  border: 1px solid #ccc; /* Adds border around tiles */
+  border-radius: 5px; /* Rounded corners */
+  padding: 10px;
+  text-align: center;
+  background-color: #f9f9f9; /* Light background color for the tiles */
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.artifact-tile img {
+  max-width: 100%; /* Ensures images fit inside the tile */
+  height: 150px; /* Sets consistent height for images */
+  object-fit: cover; /* Ensures images are cropped proportionally */
+  margin-bottom: 10px;
+  border-radius: 5px; /* Matches tile corners */
+}
+
+.artifact-tile h3 {
+  color: black; /* Sets default text color for the title */
+  font-size: 16px; /* Adjusted for readability */
+  margin: 10px 0 5px;
+}
+
+.artifact-tile h3.viewed {
+  color: purple; /* Changes title color to purple when viewed */
+}
+
+.artifact-tile p {
+  color: black; /* Sets default text color for the archiver */
+  font-size: 14px;
+  margin: 0; /* Removes extra spacing */
+}
+
+.artifact-tile a {
+  text-decoration: none; /* Removes underline for links */
+  color: inherit; /* Ensures text inherits color from parent */
+}
+
+.artifact-tile a:hover {
+  text-decoration: none; /* Prevents underline on hover */
+}
+
+.artifact-tile:hover {
+  transform: scale(1.02); /* Slightly enlarge the tile on hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow */
+}
