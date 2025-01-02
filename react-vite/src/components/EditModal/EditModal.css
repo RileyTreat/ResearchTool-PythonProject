@@ -1,0 +1,55 @@
+.edit-modal-container {
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .edit-modal-container h1 {
+    margin-bottom: 20px;
+    font-size: 24px;
+  }
+  
+  .edit-modal-container textarea {
+    width: 90%; /* Adjust width */
+    max-width: 500px; /* Optional: Limit the maximum width */
+    height: 100px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 0 auto; /* Center the textarea */
+    display: block; /* Ensure it's treated as a block-level element */
+  }
+  
+  .edit-modal-buttons {
+    margin-top: 20px;
+  }
+  
+  .save-edit-button {
+    padding: 10px 15px;
+    background-color: #c2c1ff; /* Darker purple */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    margin-right: 10px;
+    cursor: pointer;
+  }
+  
+  .save-edit-button:hover {
+    background-color: #a19ef5; /* Slightly darker purple */
+  }
+  
+  .cancel-edit-button {
+    padding: 10px 15px;
+    background-color: #ffad4b; /* Creamy orange */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .cancel-edit-button:hover {
+    background-color: #e6993d; /* Slightly darker orange */
+  }
+  

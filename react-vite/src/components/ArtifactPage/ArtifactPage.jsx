@@ -2,11 +2,13 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { thunkGetSingleArtifact } from "../../redux/artifacts";
-import { thunkCreateQuestion, thunkDeleteQuestion } from "../../redux/questions";
+import { thunkCreateQuestion, thunkDeleteQuestion, thunkUpdateQuestion } from "../../redux/questions";
 import { thunkGetQuestionsByArtifact } from "../../redux/questions";
+import { thunkUpdateAnswer } from "../../redux/answers"
 import OpenModalButton from "../OpenModalButton";
 import DeleteModal from "../DeleteModal";
 import { useModal } from "../../context/Modal";
+import EditModal from "../EditModal";
 import "./ArtifactPage.css";
 
 function ArtifactPage() {
@@ -42,6 +44,19 @@ function ArtifactPage() {
     await dispatch(thunkDeleteQuestion(questionId));
     dispatch(thunkGetQuestionsByArtifact(artifactId)); // Refresh questions after deletion
   };
+
+  const handleEditAnswer = async (answerId, updatedContent) => {
+    await dispatch(thunkUpdateAnswer(answerId, { answer: updatedContent }));
+    dispatch(thunkGetQuestionsByArtifact(artifactId)); // Refresh questions
+    closeModal();
+  };
+  
+  const handleEditQuestion = async (questionId, updatedContent) => {
+    await dispatch(thunkUpdateQuestion(questionId, { question: updatedContent }));
+    dispatch(thunkGetQuestionsByArtifact(artifactId)); // Refresh questions
+    closeModal();
+  };
+  
 
   if (!artifact) return <p>Loading...</p>;
 
@@ -85,7 +100,17 @@ function ArtifactPage() {
             {/* Show delete and edit buttons for the logged-in user's questions */}
             {q.user_id === loggedInUserId && (
               <div>
-                <button className="edit-button">Edit</button>
+                <OpenModalButton
+                  buttonText="Edit"
+                  buttonClassName="edit-button"
+                  modalComponent={
+                    <EditModal
+                      currentContent={q.question} // Pass the current question content
+                      onSave={(updatedContent) => handleEditQuestion(q.id, updatedContent)}
+                      onCancel={closeModal}
+                    />
+                  }
+                />
                 <OpenModalButton
                   buttonText="Delete"
                   buttonClassName="delete-button"
@@ -94,7 +119,6 @@ function ArtifactPage() {
                     onConfirm={() => handleDeleteQuestion(q.id)}
                     onCancel={closeModal}
                   />}
-                  
                 />
               </div>
             )}
@@ -107,7 +131,17 @@ function ArtifactPage() {
                   {/* Show delete and edit buttons for the logged-in user's answers */}
                   {a.user_id === loggedInUserId && (
                     <div>
-                      <button className="edit-button">Edit</button>
+                      <OpenModalButton
+                        buttonText="Edit"
+                        buttonClassName="edit-button"
+                        modalComponent={
+                          <EditModal
+                            currentContent={a.answer} // Pass the current answer content
+                            onSave={(updatedContent) => handleEditAnswer(a.id, updatedContent)}
+                            onCancel={closeModal}
+                          />
+                        }
+                      />
                       <OpenModalButton
                         buttonText="Delete"
                         buttonClassName="delete-button"
@@ -116,7 +150,6 @@ function ArtifactPage() {
                           onConfirm={() => handleDeleteQuestion(a.id)}
                           onCancel={closeModal}
                         />}
-                        
                       />
                     </div>
                   )}
