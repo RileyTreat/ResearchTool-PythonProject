@@ -85,7 +85,7 @@
     background-color: #a19ef5; /* Slightly darker purple */
 }
 
-.delete-button {
+.artifact-page .delete-button {
     padding: 5px 10px;
     margin-right: 5px;
     border-radius: 5px;
@@ -95,6 +95,6 @@
     background-color: #ffad4b; /* Creamy orange */
 }
 
-.delete-button:hover {
+.artifact-page .delete-button:hover {
     background-color: #e6993d; /* Darker creamy orange */
 }

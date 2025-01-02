@@ -1,0 +1,56 @@
+.delete-modal-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    background-color: #fff;
+    width: 300px;
+  }
+  
+  .delete-modal-container h1 {
+    color: #ffad4b; /* Orange */
+    margin-bottom: 10px;
+  }
+  
+  .delete-modal-container p {
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .delete-modal-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .delete-confirm-button {
+    background-color: #ffad4b; /* Orange */
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .delete-confirm-button:hover {
+    background-color: #e99c42;
+  }
+  
+  .delete-cancel-button {
+    background-color: #e6e5ff; /* Lavender */
+    color: #333;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .delete-cancel-button:hover {
+    background-color: #d2d1f7;
+  }
+  
