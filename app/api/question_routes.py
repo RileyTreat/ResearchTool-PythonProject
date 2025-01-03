@@ -1,6 +1,6 @@
 from flask import Blueprint, request, jsonify
 from flask_login import login_required, current_user
-from app.models import db, Question, Artifact
+from app.models import db, Question, Artifact, ArtifactImage
 
 question_routes = Blueprint('questions', __name__)
 
@@ -12,19 +12,40 @@ def get_questions(artifact_id):
     return jsonify([question.to_dict() for question in questions]), 200
 
 #GET all questions by the current logged in user
-@question_routes.route('/current', methods=['GET'])
+@question_routes.route('questions/current', methods=['GET'])
 @login_required
 def get_user_questions():
     """
     Get all questions owned by the current logged-in user.
     """
     user_id = current_user.id
-    questions = Question.query.filter_by(user_id=user_id).all()
 
-    if not questions:
+    # Fetch the joined data
+    results = db.session.query(Question, Artifact, ArtifactImage).join(
+        Artifact, Question.artifact_id == Artifact.id
+    ).outerjoin(
+        ArtifactImage, Artifact.id == ArtifactImage.artifact_id
+    ).filter(
+        Question.user_id == user_id
+    ).all()
+
+    # Serialize the data
+    question_data = []
+    for question, artifact, artifact_image in results:
+        question_dict = question.to_dict()
+        question_dict['artifact'] = artifact.to_dict()
+        if artifact_image:
+            question_dict['artifact']['image'] = artifact_image.url  # Assuming only one image per artifact
+        else:
+            question_dict['artifact']['image'] = None
+        question_data.append(question_dict)
+
+    if not question_data:
         return jsonify({'message': 'No questions found for the current user'}), 404
 
-    return jsonify([question.to_dict() for question in questions]), 200
+    return jsonify(question_data), 200
+
+
 
 # POST a new question
 @question_routes.route('/artifacts/<int:artifact_id>/questions', methods=['POST'])

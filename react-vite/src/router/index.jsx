@@ -6,6 +6,7 @@ import WelcomePage from '../components/WelcomePage';
 import HomePage from '../components/HomePage/HomePage';
 import ArtifactPage from '../components/ArtifactPage';
 import ManageArtifacts from '../components/ManageArtifactsPage';
+import ManageQuestionsPage from '../components/ManageQuestionsPage';
 
 export const router = createBrowserRouter([
   {
@@ -45,7 +46,7 @@ export const router = createBrowserRouter([
       },
       {
         path: '/archiver/questions',
-        element: <h1>Archivers questions</h1>
+        element: <ManageQuestionsPage />
       },
       {
         path: '/archiver/answers',

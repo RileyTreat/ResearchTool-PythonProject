@@ -16,8 +16,8 @@ function ArtifactPage() {
   const dispatch = useDispatch();
   const artifact = useSelector((state) => state.artifacts.singleArtifact);
   const loggedInUserId = useSelector((state) => state.session.user?.id);
-  const questions = useSelector((state) => state.questions);
-  console.log("Redux questions:", questions);
+  const questions = useSelector((state) => state.questions.allQuestions || []);
+  // console.log("Redux questions:", questions);
   const { closeModal } = useModal()
 
   const [question, setQuestion] = useState("");
