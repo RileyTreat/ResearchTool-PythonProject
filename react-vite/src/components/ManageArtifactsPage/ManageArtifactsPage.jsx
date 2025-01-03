@@ -24,6 +24,10 @@ function ManageArtifacts() {
     // Functionality for delete logic will be handled by DeleteModal
   };
 
+  const handleTileClick = (artifactId) => {
+    navigate(`/artifacts/${artifactId}`);
+  };
+
   return (
     <div className="manage-page">
       {/* Navigation Buttons */}
@@ -42,7 +46,7 @@ function ManageArtifacts() {
           <p>No artifacts found.</p>
         ) : (
           artifacts.map((artifact) => (
-            <div key={artifact.id} className="artifact-tile">
+            <div key={artifact.id} className="artifact-tile" onClick={() => handleTileClick(artifact.id)}>
               <img
                 src={artifact.images?.[0]?.url || "/placeholder.jpg"}
                 alt={artifact.title}
