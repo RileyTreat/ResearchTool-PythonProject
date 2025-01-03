@@ -4,25 +4,30 @@
 
 .artifact-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Restores grid layout */
-  gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Restores grid layout */
+  gap: 25px;
 }
 
 .artifact-tile {
-  border: 1px solid #ccc; /* Adds border around tiles */
-  border-radius: 5px; /* Rounded corners */
-  padding: 10px;
-  text-align: center;
-  background-color: #f9f9f9; /* Light background color for the tiles */
+  border: 1px solid #ccc; /* Subtle border */
+  border-radius: 8px; /* Matches question-tile corner radius */
+  background-color: #ffefcc; /* Light orange */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Matches question-tile shadow */
   transition: transform 0.2s, box-shadow 0.2s;
+  padding: 10px;
+  height: auto;
+  text-align: center;
+  overflow: hidden;
+  cursor: pointer;
 }
 
 .artifact-tile img {
-  max-width: 100%; /* Ensures images fit inside the tile */
-  height: 150px; /* Sets consistent height for images */
-  object-fit: cover; /* Ensures images are cropped proportionally */
-  margin-bottom: 10px;
-  border-radius: 5px; /* Matches tile corners */
+  max-width: 300px; /* Matches the max width of question-tile */
+  max-height: 300px; /* Matches the max height of question-tile */
+  object-fit: cover;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 0 auto 15px;
+  display: block;
 }
 
 .artifact-tile h3 {
