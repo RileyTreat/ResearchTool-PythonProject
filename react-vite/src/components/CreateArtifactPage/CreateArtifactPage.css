@@ -1,0 +1,122 @@
+/* Container Styling */
+.create-artifact-container {
+    width: 100%;
+    max-width: 800px; /* Wider form container */
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #ffefcc;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center; /* Centers the title */
+}
+
+/* Form Styling */
+.artifact-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers all elements inside the form */
+}
+
+/* Form Group */
+.artifact-form .form-group {
+    width: 100%;
+    max-width: 600px; /* Matches the input width */
+    margin-bottom: 20px; /* Space between input fields */
+    text-align: left; /* Labels aligned to the left */
+}
+
+/* Labels */
+.artifact-form label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+    font-size: 16px;
+    text-align: left;
+}
+
+/* Inputs and Textareas */
+.artifact-form input,
+.artifact-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box; /* Includes padding in width */
+    display: block;
+    margin: 0 auto;
+}
+
+/* Textarea Specifics */
+.artifact-form textarea {
+    height: 120px;
+    resize: vertical; /* Allow resizing */
+}
+
+/* Buttons Container */
+.artifact-form .image-field {
+    display: flex;
+    justify-content: space-between; /* Ensure buttons are on left and right */
+    align-items: center; /* Align buttons vertically */
+    width: 100%; /* Match input width */
+    margin-top: 10px; /* Add space above buttons */
+    gap: 10px; /* Space between buttons */
+}
+
+/* Add Another Button */
+.add-button {
+    background-color: #c2c1ff; /* Purple */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+/* Add Button Hover */
+.add-button:hover {
+    background-color: #a19ef5; /* Darker Purple */
+}
+
+/* Remove Button */
+.remove-button {
+    background-color: #ffad4b; /* Orange */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+/* Remove Button Hover */
+.remove-button:hover {
+    background-color: #e6993d; /* Darker Orange */
+}
+
+/* Submit Button */
+.artifact-form .submit-button {
+    background-color: #ffad4b;
+    color: white;
+    border: none;
+    padding: 15px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px;
+    width: 100%;
+    max-width: 600px; /* Aligns with inputs */
+}
+
+.artifact-form .submit-button:hover {
+    background-color: #e6993d;
+}
+
+/* Headline */
+.create-artifact-container h1 {
+    font-size: 28px;
+    color: #6b5fbb; /* Dark purple */
+    margin-bottom: 20px;
+}

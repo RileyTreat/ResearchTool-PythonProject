@@ -9,12 +9,14 @@ import sessionReducer from "./session";
 import artifactsReducer from "./artifacts"; 
 import questionsReducer from "./questions"; 
 import answersReducer from "./answers"; 
+import artifactImagesReducer from "./artifactImages";
 
 const rootReducer = combineReducers({
   session: sessionReducer,
   artifacts: artifactsReducer, 
   questions: questionsReducer, 
-  answers: answersReducer,     
+  answers: answersReducer, 
+  artifactImages: artifactImagesReducer,    
 });
 
 let enhancer;

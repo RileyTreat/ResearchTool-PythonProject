@@ -7,6 +7,7 @@ import HomePage from '../components/HomePage/HomePage';
 import ArtifactPage from '../components/ArtifactPage';
 import ManageArtifacts from '../components/ManageArtifactsPage';
 import ManageQuestionsPage from '../components/ManageQuestionsPage';
+import CreateArtifactPage from '../components/CreateArtifactPage';
 
 export const router = createBrowserRouter([
   {
@@ -38,7 +39,7 @@ export const router = createBrowserRouter([
       },
       {
         path: '/artifacts/new',
-        element: <h1>Create an artifact</h1>
+        element: <CreateArtifactPage />
       },
       {
         path: '/archiver/artifacts',
