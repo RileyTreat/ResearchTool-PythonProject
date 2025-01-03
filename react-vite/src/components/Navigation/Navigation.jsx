@@ -4,15 +4,19 @@ import "./Navigation.css";
 
 function Navigation() {
   return (
-    <ul>
-      <li>
-        <NavLink to="/home">CurioRelica</NavLink>
-      </li>
+    <nav className="navbar">
+      
+      <NavLink to="/home" className="navbar-logo">
+        <img src="/curiorelica-high-resolution-logo.png" alt="CurioRelica Logo" />
+      </NavLink>
 
-      <li>
+      <div className="navbar-profile">
+        <NavLink to="/artifacts/new" className="create-artifact-button">
+          Create a New Artifact
+        </NavLink>
         <ProfileButton />
-      </li>
-    </ul>
+      </div>
+    </nav>
   );
 }
 

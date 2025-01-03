@@ -1,0 +1,66 @@
+.profile-dropdown {
+    position: absolute;
+    top: 50px; /* Adjust based on the height of the navbar */
+    right: 10px; /* Align to the right */
+    background-color: #fffaf2; /* Light orange */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    display: flex;
+    flex-direction: column; /* Make items vertical */
+    z-index: 1000;
+  }
+  
+  .profile-dropdown li {
+    margin-bottom: 10px;
+    color: #a19ef5; /* Darker purple text */
+    font-weight: bold;
+  }
+  
+  .profile-dropdown li:last-child {
+    margin-bottom: 0; /* Remove margin for the last item */
+  }
+  
+  .profile-dropdown button {
+    padding: 10px 15px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+    font-size: 16px;
+  }
+  
+  .manage-button {
+    background-color: #a19ef5; /* Darker purple */
+    color: white;
+    margin-bottom: 10px;
+  }
+  
+  .manage-button:hover {
+    background-color: #8d8ae0; /* Slightly darker purple */
+  }
+  
+  .logout-button {
+    background-color: #ffad4b; /* Creamy orange */
+    color: white;
+  }
+  
+  .logout-button:hover {
+    background-color: #e6993d; /* Slightly darker orange */
+  }
+  
+  .profile-icon {
+    background: none; /* Removes the default background */
+    border: none; /* Removes the default border */
+    padding: 0; /* Removes extra padding */
+    margin: 0; /* Removes any margin */
+    cursor: pointer; /* Adds a pointer cursor for better user experience */
+    display: inline-flex; /* Aligns the icon properly */
+    align-items: center; /* Centers the icon vertically */
+    justify-content: center; /* Centers the icon horizontally */
+  }
+  
+  .profile-icon:hover .profile-icon-purple {
+    color: #8d8ae0; /* Slightly darker purple on hover */
+  }
