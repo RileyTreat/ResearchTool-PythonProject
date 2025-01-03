@@ -3,6 +3,7 @@ const SET_SINGLE_ARTIFACT = 'artifacts/setSingleArtifact';
 const ADD_ARTIFACT = 'artifacts/addArtifact';
 const UPDATE_ARTIFACT = 'artifacts/updateArtifact';
 const DELETE_ARTIFACT = 'artifacts/deleteArtifact';
+const SET_USER_ARTIFACTS = 'artifacts/setUserArtifacts';
 
 // Action Creators
 const setArtifacts = (artifacts) => ({ type: SET_ARTIFACTS, artifacts });
@@ -10,6 +11,7 @@ const setSingleArtifact = (artifact) => ({ type: SET_SINGLE_ARTIFACT, artifact }
 const addArtifact = (artifact) => ({ type: ADD_ARTIFACT, artifact });
 const updateArtifact = (artifact) => ({ type: UPDATE_ARTIFACT, artifact });
 const deleteArtifact = (artifactId) => ({ type: DELETE_ARTIFACT, artifactId });
+const setUserArtifacts = (artifacts) => ({ type: SET_USER_ARTIFACTS, artifacts });
 
 // Thunks
 export const thunkGetArtifacts = () => async (dispatch) => {
@@ -61,8 +63,17 @@ export const thunkDeleteArtifact = (artifactId) => async (dispatch) => {
     }
 };
 
+// Thunk to Get User-Specific Artifacts
+export const thunkGetUserArtifacts = () => async (dispatch) => {
+    const response = await fetch('/api/artifacts/current'); // Adjust the endpoint if necessary
+    if (response.ok) {
+        const artifacts = await response.json();
+        dispatch(setUserArtifacts(artifacts));
+    }
+};
+
 // Initial State
-const initialState = { allArtifacts: [], singleArtifact: null };
+const initialState = { allArtifacts: [], singleArtifact: null, userArtifacts: [] };
 
 // Reducer
 export default function artifactsReducer(state = initialState, action) {
@@ -91,6 +102,8 @@ export default function artifactsReducer(state = initialState, action) {
                 singleArtifact:
                     state.singleArtifact?.id === action.artifactId ? null : state.singleArtifact,
             };
+        case SET_USER_ARTIFACTS:
+                return { ...state, userArtifacts: action.artifacts };
         default:
             return state;
     }

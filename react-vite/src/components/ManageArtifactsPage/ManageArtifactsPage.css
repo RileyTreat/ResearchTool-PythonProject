@@ -1,0 +1,111 @@
+.manage-page {
+    padding: 20px;
+}
+
+.manage-page-navigation {
+    display: flex;
+    justify-content: center;
+    gap: 25px; /* Increased gap for better spacing */
+    margin-bottom: 30px; /* Adjusted margin for better separation */
+}
+
+.manage-page-navigation button {
+    padding: 15px 25px; /* Increased padding for larger buttons */
+    border-radius: 8px; /* Slightly rounded corners */
+    background-color: #c2c1ff; /* Lavender */
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 18px; /* Increased font size for better visibility */
+    font-weight: bold; /* Makes the text more prominent */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for better aesthetics */
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+.manage-page-navigation button:hover {
+    background-color: #a19ef5; /* Darker Lavender on hover */
+    transform: scale(1.05); /* Slight zoom effect on hover */
+}
+
+
+.manage-header {
+    text-align: left;
+    margin-left: 20px;
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Artifacts Grid */
+.artifacts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Adjusted for larger tiles */
+    gap: 25px; /* Increased gap for better spacing */
+}
+
+/* Artifacts Tiles */
+.artifact-tile {
+    border: 1px solid #ccc;
+    border-radius: 8px; /* Slightly larger corner radius */
+    text-align: center;
+    background-color: #f9f9f9;
+    transition: transform 0.2s, box-shadow 0.2s;
+    padding: 10px; /* Padding inside the tile */
+    height: auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for visual appeal */
+}
+
+.artifact-tile img {
+    max-width: 100%;
+    height: 180px; /* Increased height for better visibility */
+    object-fit: cover;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+.artifact-tile h3 {
+    color: black;
+    font-size: 18px; /* Slightly larger font */
+    margin: 12px 0;
+}
+
+.artifact-tile p {
+    color: black;
+    font-size: 16px; /* Adjusted font size for better readability */
+    margin: 0;
+}
+
+.artifact-actions {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+}
+
+/* Buttons */
+.edit-button {
+    padding: 8px 15px; /* Larger buttons for usability */
+    border-radius: 5px;
+    color: white;
+    border: none;
+    cursor: pointer;
+    background-color: #c2c1ff; /* Lavender */
+    font-size: 14px; /* Slightly larger font */
+}
+
+.edit-button:hover {
+    background-color: #a19ef5; /* Darker Lavender */
+}
+
+.delete-button {
+    padding: 8px 15px;
+    border-radius: 5px;
+    color: white;
+    border: none;
+    cursor: pointer;
+    background-color: #ffad4b; /* Creamy Orange */
+    font-size: 14px;
+}
+
+.delete-button:hover {
+    background-color: #e6993d; /* Darker Creamy Orange */
+}

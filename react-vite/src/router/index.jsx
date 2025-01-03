@@ -5,6 +5,7 @@ import Layout from './Layout';
 import WelcomePage from '../components/WelcomePage';
 import HomePage from '../components/HomePage/HomePage';
 import ArtifactPage from '../components/ArtifactPage';
+import ManageArtifacts from '../components/ManageArtifactsPage';
 
 export const router = createBrowserRouter([
   {
@@ -40,7 +41,7 @@ export const router = createBrowserRouter([
       },
       {
         path: '/archiver/artifacts',
-        element: <h1>Archivers artifacts</h1>
+        element: <ManageArtifacts />
       },
       {
         path: '/archiver/questions',
