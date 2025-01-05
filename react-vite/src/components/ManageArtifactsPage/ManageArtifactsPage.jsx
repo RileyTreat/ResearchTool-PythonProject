@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { useNavigate, NavLink } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { thunkGetUserArtifacts } from "../../redux/artifacts";
 import OpenModalButton from "../OpenModalButton";
 import DeleteModal from "../DeleteModal";

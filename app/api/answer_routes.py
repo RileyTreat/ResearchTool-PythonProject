@@ -12,7 +12,7 @@ def get_answers(question_id):
     return jsonify([answer.to_dict() for answer in answers]), 200
 
 #GET all answers from the current logged in user
-@answer_routes.route('/current', methods=['GET'])
+@answer_routes.route('/answers/current', methods=['GET'])
 @login_required
 def get_user_answers():
     """

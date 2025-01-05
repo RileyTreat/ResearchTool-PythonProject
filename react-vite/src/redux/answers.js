@@ -75,6 +75,15 @@ export const thunkDeleteAnswer = (answerId) => async (dispatch) => {
   }
 };
 
+export const thunkGetUserAnswers = () => async (dispatch) => {
+  const response = await fetch(`/api/answers/current`);
+  if (response.ok) {
+      const userAnswers = await response.json();
+      dispatch(setAnswers(userAnswers)); 
+  }
+};
+
+
 // Initial State
 const initialState = [];
 
