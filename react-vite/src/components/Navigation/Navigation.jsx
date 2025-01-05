@@ -23,7 +23,7 @@ function Navigation() {
         <NavLink to="/artifacts/new" className="create-artifact-button">
           Create a New Artifact
         </NavLink>
-        <ProfileButton />
+        <ProfileButton className="profile-icon" />
       </div>
     </nav>
   );

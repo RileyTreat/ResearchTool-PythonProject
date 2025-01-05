@@ -51,7 +51,7 @@ function ProfileButton() {
   return (
     <>
       <button onClick={toggleMenu} className="profile-icon">
-        <FaUserCircle size={24} color="#a19ef5" />
+        <FaUserCircle size={33} color="#a19ef5" />
       </button>
       {showMenu && (
         <ul className="profile-dropdown" ref={ulRef}>

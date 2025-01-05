@@ -8,6 +8,11 @@
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+.profile-icon {
+  width: 35px; /* Adjust size as needed */
+  height: 30px;
+}
+
 /* Logo */
 .navbar-logo {
   height: 60px;
