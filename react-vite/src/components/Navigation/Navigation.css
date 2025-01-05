@@ -10,16 +10,19 @@
 
 /* Logo */
 .navbar-logo {
-  font-size: 24px;
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
+  height: 60px;
+  width: 270px; 
+  overflow: hidden;
+  border-radius: 10px;
 }
 
 .navbar-logo img {
-  height: 50px;
-  width: auto;
+  height: 100%;
+  width: 100%;
   cursor: pointer;
+  object-fit: cover;
+  overflow: hidden;
+  border-radius: 10px;
 }
 
 /* Align Profile Icon and Buttons to Right */

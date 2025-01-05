@@ -1,8 +1,17 @@
 import { NavLink } from "react-router-dom";
 import ProfileButton from "./ProfileButton";
 import "./Navigation.css";
+import { useLocation } from "react-router-dom";
 
 function Navigation() {
+  const location = useLocation();
+
+  // Do not render NavBar if the current path is "/"
+  if (location.pathname === "/") {
+    return null;
+  }
+
+
   return (
     <nav className="navbar">
       
