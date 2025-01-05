@@ -1,49 +1,81 @@
-#modal-content {
-    background-color:#f2f1ef;
-    color: black;
-    padding: 20px;
-    border-radius: 8px;
-    position: fixed;
-    top: 20%;
-    left: 50%;
-    transform: translate(-50%, -20%);
-  }
+/* General Modal Styling */
+.modal-container {
+  padding: 20px 30px; /* Adjusted horizontal padding for balance */
+  background-color: #f9f9f9; /* Light background */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  max-width: 420px; /* Increased max-width slightly for better spacing */
+  margin: 0 auto;
+}
 
-  form {
-    display: flex;
-    flex-direction: column;
-    width: 300px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: transparent;
-    border-radius: 10px;
-  }
+.modal-container h1 {
+  font-size: 24px;
+  color: #333; /* Dark text */
+  text-align: center;
+  margin-bottom: 20px;
+}
 
-  label {
-   margin-bottom: 10px;
-    display: flex;
-    flex-direction: column;
-  }
+.modal-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
 
-  label input {
-    margin-top: 5px;
-    /* Add margin to the top of the input for more space between label and input */
-  }
+.modal-container label {
+  font-size: 14px;
+  font-weight: bold;
+  color: #555; /* Subtle gray */
+}
 
-  /*input {
-    padding: 20px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }*/
+.modal-container input {
+  width: calc(100% - 20px); /* Reduces width to add space on both sides */
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+}
 
-  ul {
-    color: #E62539;
-    list-style-type: none;
-    padding: 0;
-  }
+.modal-container input:focus {
+  outline: none;
+  border-color: #a19ef5; /* Lavender border on focus */
+  box-shadow: 0 0 4px rgba(161, 158, 245, 0.4); /* Subtle glow */
+}
 
-  .error {
-    color: #E62539;
-    margin-top: 5px;
-  }
+.modal-container button {
+  padding: 10px; /* Original padding */
+  border: none;
+  border-radius: 5px;
+  font-size: 16px; /* Original font size */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.modal-container button[type="submit"] {
+  background-color: #c2c1ff; /* Lavender */
+  color: white;
+  font-weight: bold;
+}
+
+.modal-container button[type="submit"]:hover {
+  background-color: #a19ef5; /* Darker Lavender */
+}
+
+.demo-button {
+  background-color: #ffad4b; /* Creamy orange */
+  color: white;
+  font-weight: bold;
+  padding: 10px; /* Original padding */
+  border-radius: 5px; /* Consistent with the rest of the buttons */
+}
+
+.demo-button:hover {
+  background-color: #e6993d; /* Darker orange */
+}
+
+/* Error Message Styling */
+.modal-container p {
+  color: red;
+  font-size: 12px;
+  margin-top: -10px;
+  margin-bottom: 10px;
+}

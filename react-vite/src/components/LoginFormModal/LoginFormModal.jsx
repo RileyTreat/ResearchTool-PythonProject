@@ -2,10 +2,12 @@ import { useState } from "react";
 import { thunkLogin } from "../../redux/session";
 import { useDispatch } from "react-redux";
 import { useModal } from "../../context/Modal";
+import { useNavigate } from "react-router-dom";
 import "./LoginForm.css";
 
 function LoginFormModal() {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState({});
@@ -25,11 +27,24 @@ function LoginFormModal() {
       setErrors(serverResponse);
     } else {
       closeModal();
+      navigate("/home");
+    }
+  };
+
+  const handleDemoLogin = async () => {
+    const demoCredentials = { email: "demo@aa.io", password: "password" }; // Replace with your actual demo user credentials
+    const serverResponse = await dispatch(thunkLogin(demoCredentials));
+
+    if (serverResponse) {
+      setErrors(serverResponse);
+    } else {
+      closeModal();
+      navigate("/home");
     }
   };
 
   return (
-    <>
+    <div className="modal-container">
       <h1>Log In</h1>
       <form onSubmit={handleSubmit}>
         <label>
@@ -53,8 +68,15 @@ function LoginFormModal() {
         </label>
         {errors.password && <p>{errors.password}</p>}
         <button type="submit">Log In</button>
+        <button
+          type="button"
+          onClick={handleDemoLogin}
+          className="demo-button"
+        >
+          Log In as Demo User
+        </button>
       </form>
-    </>
+    </div>
   );
 }
 
