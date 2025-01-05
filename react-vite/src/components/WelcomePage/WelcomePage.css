@@ -1,0 +1,105 @@
+.welcome-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #f9f9f9;
+    padding: 20px;
+  }
+  
+
+.welcome-content {
+    display: flex;
+    align-items: center;
+    max-width: 1200px;
+    justify-content: center;
+    width: 100%;
+    
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .welcome-image img {
+    max-width: 90%; 
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .welcome-text {
+    flex: 1;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 10px; 
+  }
+  
+  .welcome-text h1 {
+    font-size: 43px;
+    color: #333;
+    margin: 0; 
+  }
+  
+  .welcome-text h2 {
+    font-size: 18px;
+    color: #666;
+    margin: 0; 
+  }
+  
+  .welcome-buttons {
+    display: flex;
+    gap: 10px; 
+  }
+  
+  .welcome-buttons button {
+    min-width: 150px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    text-align: center;
+  }
+  
+  .welcome-buttons button:first-child {
+    background-color: #c2c1ff; /* Lavender */
+    color: white;
+    transition: background-color 0.3s;
+  }
+  
+  .welcome-buttons button:first-child:hover {
+    background-color: #a19ef5; /* Darker Lavender */
+  }
+  
+  .welcome-buttons button:last-child {
+    background-color: #ffad4b; /* Creamy orange */
+    color: white;
+    transition: background-color 0.3s;
+  }
+  
+  .welcome-buttons button:last-child:hover {
+    background-color: #e6993d; /* Darker orange */
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .welcome-content {
+      flex-direction: column; 
+      text-align: center;
+    }
+  
+    .welcome-text {
+      align-items: center;
+      text-align: center;
+    }
+  
+    .welcome-buttons {
+      justify-content: center;
+    }
+  
+    .welcome-image img {
+      max-width: 60%; /* Adjust image size on small screens */
+    }
+  }
+  
