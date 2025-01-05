@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, NavLink } from "react-router-dom";
 import { thunkGetUserArtifacts } from "../../redux/artifacts";
 import OpenModalButton from "../OpenModalButton";
 import DeleteModal from "../DeleteModal";
@@ -15,9 +15,10 @@ function ManageArtifacts() {
     dispatch(thunkGetUserArtifacts());
   }, [dispatch]);
 
-  const handleEditArtifact = (artifactId) => {
-    navigate(`/artifacts/${artifactId}/edit`);
-  };
+  // const handleEditArtifact = (e, artifactId) => {
+  //   e.stopPropagation();
+  //   navigate(`/artifacts/${artifactId}/edit`);
+  // };
 
   const handleDeleteArtifact = (artifactId) => {
     console.log("Deleting artifact:", artifactId);
@@ -55,11 +56,24 @@ function ManageArtifacts() {
               <h3>{artifact.title}</h3>
               <div className="artifact-actions">
                 <button
+                    className="edit-button"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      navigate(`/artifacts/${artifact.id}/edit`);
+                    }}
+                  >
+                    Edit
+                  </button>
+                {/* <NavLink
+                  to={`/artifacts/${artifact.id}/edit`}
                   className="edit-button"
-                  onClick={() => handleEditArtifact(artifact.id)}
+                  onClick={(e) => {
+                    e.stopPropagation()
+                    console.log("Navigating to edit page for artifact:", artifact.id);
+                  }}
                 >
                   Edit
-                </button>
+                </NavLink> */}
                 <OpenModalButton
                   buttonText="Delete"
                   buttonClassName="delete-button"

@@ -41,7 +41,7 @@ def create_artifact():
     return jsonify(artifact.to_dict()), 201
 
 # PUT - Update an artifact
-@artifact_routes.route('/<int:id>', methods=['PUT'])
+@artifact_routes.route('/<int:id>/edit', methods=['PUT'])
 @login_required
 def update_artifact(id):
     artifact = Artifact.query.get(id)

@@ -43,7 +43,7 @@ export const thunkCreateArtifact = (artifactData) => async (dispatch) => {
 };
 
 export const thunkUpdateArtifact = (artifactId, artifactData) => async (dispatch) => {
-    const response = await fetch(`/api/artifacts/${artifactId}`, {
+    const response = await fetch(`/api/artifacts/${artifactId}/edit`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(artifactData),
