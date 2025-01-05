@@ -69,7 +69,7 @@ function ArtifactPage() {
         <img
           src={artifact.images?.[0]?.url || "placeholder.jpg"}
           alt={artifact.title}
-          className="artifact-image"
+          className="artifact-image-page"
         />
         <div className="artifact-info">
           <p><strong>Description:</strong> {artifact.description || "N/A"}</p>
